@@ -1,1 +1,1 @@
-# splice-vit.github.io
+# multidiffusion.github.io
