@@ -100,6 +100,39 @@ $(document).ready(function () {
           </p>
 
   <p class="section">&nbsp;</p>
+    <p class="section"><b>Method</b></p>
+      <div class="container">
+<table align="center" width="940" border="0">
+  <tbody>
+    <tr>
+      <td><p style="margin-top: 0px;">
+          Our key idea is to define a new generation process over a pre-trained reference diffusion model.
+          Starting from a noise image, at each generation step, we solve an optimization task whose objective is that each crop
+          will follow as closely as possible its denoised version.
+      </p></td>
+    </tr>
+    <tr>
+      <td><img src="pics/pipeline.jpg" alt="" width="1000" /></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+          <table align="" width="940" border="0">
+  <tbody>
+    <tr>
+      <td><p>
+          Note that while each denoising step may pull to a different direction,
+          our process fuses these inconsistent directions into a global denoising step, resulting in a high-quality seamless image.
+      </p></td>
+    </tr>
+    <tr>
+      <td style="padding-left: 75px">
+        <video height="250" playsinline="" autoplay="" loop="" preload="" muted=""> <source src="pics/fusing.mp4" type="video/mp4"> </video>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<hr><br>
 <p class="section"><b>Text-to-Panorama generation</b></p>
 
     <p style="margin-top: 0px;">
@@ -161,7 +194,7 @@ $(document).ready(function () {
       <span class="dot" onclick="currentSlide(6)"></span>
     <span class="dot" onclick="currentSlide(7)"></span>
 </div>
-
+<!--<hr>-->
 <br>
 <p class="section"><b>Region-based generation</b></p>
       <div class="container">
