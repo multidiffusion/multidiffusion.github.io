@@ -51,9 +51,9 @@ $(document).ready(function () {
 <!--    <span class="author"><a target="_blank" href="https://omerbt.github.io/webpage">Omer Bar-Tal</a>&nbsp;<sup>*1</sup></span>-->
 <!--    <span class="author"><a target="_blank" href="https://lioryariv.github.io/">Lior Yariv&nbsp;</a><sup>*1</sup></span>-->
 <!--	<span class="author"><a target="_blank" href="https://www.wisdom.weizmann.ac.il/~ylipman/">Yaron Lipman</a>&nbsp;<sup>1,2</sup></span>-->
-<!--    <span class="author"><a target="_blank" href="https://www.weizmann.ac.il/math/dekel/">Tali Dekel</a>&nbsp;<sup>1&nbsp;</sup></span>-->
-        <span class="author"><a target="_blank" href="https://omerbt.github.io">Omer Bar-Tal</a>&nbsp;<sup>*</sup></span>
-    <span class="author"><a target="_blank" href="https://lioryariv.github.io/">Lior Yariv&nbsp;</a><sup>*</sup></span>
+<!--    <span class="author"><a target="_blank" href="https://www.weizmann.ac.il/math/dekel/">Tali Dekel</a>&nbsp;<sup>1&nbsp;</sup></span>-->	
+	<span class="author"><a target="_blank" href="https://omerbt.github.io">Omer Bar-Tal</a>&nbsp;<sup>*</sup></span>
+	<span class="author"><a target="_blank" href="https://lioryariv.github.io/">Lior Yariv&nbsp;</a><sup>*</sup></span>
 	<span class="author"><a target="_blank" href="https://www.wisdom.weizmann.ac.il/~ylipman/">Yaron Lipman</a>&nbsp;</span>
     <span class="author"><a target="_blank" href="https://www.weizmann.ac.il/math/dekel/">Tali Dekel</a></span>
   </p>
@@ -99,13 +99,14 @@ $(document).ready(function () {
               Recent advances in text-to-image generation with diffusion models present transformative capabilities in image quality. However, user controllability of the generated image, and fast adaptation to new tasks still remains an open challenge, currently mostly addressed by costly and long re-training and fine-tuning or ad-hoc adaptations to specific image generation tasks. In this work, we present MultiDiffusion, a unified framework that enables versatile and controllable image generation, using a pre-trained text-to-image diffusion model, without any further training or finetuning. At the center of our approach is a new generation process, based on an optimization task that binds together multiple diffusion generation processes with a shared set of parameters or constraints. We show that MultiDiffusion can be readily applied to generate high quality and diverse images that adhere to user-provided controls, such as desired aspect ratio (e.g., panorama), and spatial guiding signals, ranging from tight segmentation masks to bounding boxes.
           </p>
 
-  <p class="section">&nbsp;</p>
+<hr>
+<!--  <p class="section">&nbsp;</p>-->
     <p class="section"><b>Method</b></p>
       <div class="container">
 <table align="center" width="940" border="0">
   <tbody>
     <tr>
-      <td><p style="margin-top: 0px;">
+      <td><p style="margin-top: -12px;">
           Our key idea is to define a new generation process over a pre-trained reference diffusion model.
           Starting from a noise image, at each generation step, we solve an optimization task whose objective is that each crop
           will follow as closely as possible its denoised version.
@@ -132,10 +133,12 @@ $(document).ready(function () {
     </tr>
   </tbody>
 </table>
-<hr><br>
-<p class="section"><b>Text-to-Panorama generation</b></p>
+<hr>
+<p class="section"><b>Applications</b></p>
+		  
+<p class="section" style="font-size: 120%"><b>Text-to-Panorama generation</b></p>
 
-    <p style="margin-top: 0px;">
+    <p style="margin-top: -10px;">
         We demonstrate text-to-panorama results using MultiDiffusion, in resolution 512x4609.
       </p>
 
@@ -196,45 +199,60 @@ $(document).ready(function () {
 </div>
 <!--<hr>-->
 <br>
-<p class="section"><b>Region-based generation</b></p>
-      <div class="container">
-<table align="center" width="940" border="0">
-  <tbody>
+		  
+		  
+		  
+<p class="section" style="font-size: 120%"><b>Tight region-based generation</b></p>
+<!--      <div class="container">-->
+	<table align="center" width="940" border="0">
+  	<tbody>
+	  
+	      <tr>
+      <td><p style="margin-top: -15px;">
+          Our method can work with tight, accurate segmentation masks, if provided by the user.
+      </p></td>
+    </tr>
     <tr>
-      <td><p style="margin-top: 0px;">
-Sample results of our region-based generation approach. Our method can work with rough masks, the can intuitively be obtained by novice users.
+      <td><img src="pics/tight.jpg" alt="" width="1000" /></td>
+    </tr>
+		  </tbody>
+	</table><br>
+<!--	</div>-->
+	
+	<p class="section" style="font-size: 120%"><b>Rought region-based generation at various aspect ratio</b></p>
+<!--      <div class="container">-->
+	<table align="center" width="940" border="0">
+  	<tbody>
+	      <tr>
+      <td><p style="margin-top: -35px;">
+          Additionaly, our method can work at arbitrary aspect ratios and with rough masks, that can intuitively be obtained by novice users.
       </p></td>
     </tr>
     <tr>
       <td><img src="pics/rough-01.jpg" alt="" width="1000" /></td>
     </tr>
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--
-        <tbody>-->
-        <tr></tr>
+ <br>
+	  
+	  
+	 
     <tr>
-      <td><p style="margin-top: 0px;"><hr><br>
-          Diverse samples generated by our framework, given rough scene layout guidance. All images depict sensible composition, scene effects and relative size of objects.<br>
+      <td><p style="margin-top: 0px;"><br>
+          We furthe show diverse samples generated by our framework, given rough scene layout guidance. All images depict sensible composition, scene effects and relative size of objects.
       </p></td>
     </tr>
     <tr>
       <td><img src="pics/var_1.jpg" alt="" width="1000" /></td>
     </tr>
     <tr></tr>
-    <tr>
-      <td><p style="margin-top: 0px;">
-                    <hr><br>
-          Our method can also work with tight, accurate masks, if provided by the user. <br>
-      </p></td>
-    </tr>
-    <tr>
-      <td><img src="pics/tight.jpg" alt="" width="1000" /></td>
-    </tr>
-  </tbody>
-</table>
-<p class="section">&nbsp;</p>
+		  
+	</tbody>
+	</table>
+<!--	</div>-->
+
+<hr>
+
+<div>
+<!--<p class="section">&nbsp;</p>-->
 
 <p class="section">&nbsp;</p>
 <p class="section" id="paper"><b>Paper</b></p>
